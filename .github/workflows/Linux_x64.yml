@@ -26,7 +26,7 @@ jobs:
       - name: Copy custom.py
         uses: canastro/copy-action@0.0.2
         with:
-          source: "custom.py"
+          source: "./custom.py"
           target: "godot/custom.py"
 
       - name: 检查目录
