@@ -24,9 +24,11 @@ jobs:
           path: godot/
 
       #将custom.py复制到godot源码根目录
-      - uses: actions/checkout@v2
+      -name: Copy custom.py
+       uses: canastro/copy-action@0.0.2
         with:
-          path: godot/
+        source: "custom.py"
+        target: "godot/custom.py"
 
       - name: 检查目录
         run: |
