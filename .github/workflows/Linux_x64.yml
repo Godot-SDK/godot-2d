@@ -40,7 +40,7 @@ jobs:
           ls 
         
       - name: Load .scons_cache directory
-        id: windows-editor-cache
+        id: linux-editor-cache
         uses: actions/cache@v2
         with:
           path: ${{github.workspace}}/.scons_cache/
@@ -56,12 +56,14 @@ jobs:
           python-version: '3.x'
           # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64'
+      # Setup scons, print python version and scons version info, so if anything is broken it won't run the build.
       - name: Configuring Python packages
         run: |
           python -c "import sys; print(sys.version)"
-          python -m pip install scons pywin32
+          python -m pip install scons
           python --version
           scons --version
+
       - name: Compilation
         env:
           SCONS_CACHE: ${{github.workspace}}/.scons_cache/
