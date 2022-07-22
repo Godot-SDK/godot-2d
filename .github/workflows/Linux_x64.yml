@@ -22,12 +22,16 @@ jobs:
           ref: ${{env.GODOT_BASE_BRANCH}}
           path: godot/
 
-      #将custom.py复制到godot源码根目录
-      - name: Copy custom.py
-        uses: canastro/copy-action@0.0.2
+      - uses: actions/checkout@v2
         with:
-          source: "custom.py"
-          target: "godot/custom.py"
+          repository: Godot-SDK/godot-2d
+          path: godot/
+      #将custom.py复制到godot源码根目录
+      # - name: Copy custom.py
+      #   uses: canastro/copy-action@0.0.2
+      #   with:
+      #     source: "custom.py"
+      #     target: "godot/custom.py"
 
       - name: 检查目录
         run: |
