@@ -29,7 +29,10 @@ jobs:
           path: godot/
 
       - name: 检查目录
-        run: ls
+        run: |
+          ls
+          cd godot
+          ls 
         
       - name: Load .scons_cache directory
         id: windows-editor-cache
