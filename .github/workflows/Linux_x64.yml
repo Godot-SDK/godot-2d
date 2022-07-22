@@ -12,7 +12,7 @@ env:
 jobs:
   windows-editorX64:
     # Windows 10 with latest image
-    runs-on: "windows-latest"
+    runs-on: "ubuntu-latest"
     name: Editor
 
     steps:
