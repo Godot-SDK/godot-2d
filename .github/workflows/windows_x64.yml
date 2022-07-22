@@ -22,11 +22,15 @@ jobs:
           repository: godotengine/godot
           ref: ${{env.GODOT_BASE_BRANCH}}
           path: godot/
+
       #将custom.py复制到godot源码根目录
       - uses: actions/checkout@v2
-        path: godot/
+        with:
+          path: godot/
+
       - name: 检查目录
         run: ls
+        
       - name: Load .scons_cache directory
         id: windows-editor-cache
         uses: actions/cache@v2
